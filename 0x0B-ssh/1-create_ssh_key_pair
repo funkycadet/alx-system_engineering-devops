@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Script to create an RSA key with school as keyfile name, bits set to 4096 and protected by passphrase
-ssh-keygen -p -f ~/.ssh/school -b 4096 -N betty
+ssh-keygen -t rsa -f school -b 4096 -N betty
