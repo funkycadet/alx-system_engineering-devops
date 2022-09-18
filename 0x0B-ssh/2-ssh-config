@@ -16,13 +16,11 @@
 # list of available options, their meanings and defaults, please see the
 # ssh_config(5) man page.
 
-Include /etc/ssh/ssh_config.d/*.conf
-
 Host *
 #   ForwardAgent no
 #   ForwardX11 no
 #   ForwardX11Trusted yes
-   PasswordAuthentication no
+#   PasswordAuthentication yes
 #   HostbasedAuthentication no
 #   GSSAPIAuthentication no
 #   GSSAPIDelegateCredentials no
@@ -50,4 +48,6 @@ Host *
     SendEnv LANG LC_*
     HashKnownHosts yes
     GSSAPIAuthentication yes
-    IdentityFile ~/.ssh/alx-intranet
+    GSSAPIDelegateCredentials no
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
