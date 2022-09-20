@@ -1,4 +1,4 @@
-#!/usr.bin/env bash
+#!/usr/bin/env bash
 # Script to install and setup root file for nginx
 sudo apt update
 sudo apt -y install nginx
