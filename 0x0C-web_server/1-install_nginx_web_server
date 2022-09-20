@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Script to install and setup root file for nginx
-sudo apt -y update
-sudo apt -y install nginx
+apt -y update
+apt -y install nginx
 echo "Hello World" > /var/www/html/index.nginx-default.html
-sudo service nginx start
+service nginx start
