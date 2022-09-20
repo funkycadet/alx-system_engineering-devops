@@ -1,0 +1,9 @@
+#!/usr.bin/env bash
+# Script to install and setup root file for nginx
+sudo apt update
+sudo apt -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo mkdir -p /var/www/welcome/html
+sudo chown -R $USER:$USER /var/www/welcome/html
+find /var/www -type d -exec chmod 775 {} \;
+echo "Hello World" > /var/www/welcome/html/index.html
