@@ -2,6 +2,6 @@
 # Script to redirect to another page
 apt-get update
 apt-get -y install nginx
-echo "Hello World" > /var/www/html/index.nginx-debian.html
-sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/smith2eric permanent;/" /etc/nginx/sites-available/default
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/youtube.com\/watch?v=QH2-TGUlwu4 permanent;/" /etc/nginx/sites-available/default
 service nginx start
