@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 # Script to add custom headers to Nginx
 apt update
-echo "add_headers X-Served-By ${HOSTNAME};" > /etc/nginx/nginx.conf
-cp /etc/nginx/nginx.conf /etc/nginx/extra.d/_custom/nginx.conf
-nginx -t
+server_config=\
+"server {
+		listen 80 default_server;
+		listen [::]:80 default_server;
+		root /var/www/html;
+		index index.html index.htm index.nginx-debian.html
+		server_name_;
+		add_headers X-Served-By \$hostname;
+}"
+echo "$server_config" > /etc/nginx/sites-enabled/default
 service nginx restart
