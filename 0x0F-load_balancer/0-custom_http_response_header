@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # Script to add custom headers to Nginx
-echo add_header X-Served-By ${HOSTNAME}; > /etc/nginx/sites-available/default
-service nginx start
+apt update
+echo 'more_set_headers "X-Served-By ${HOSTNAME};' > /etc/nginx/nginx.conf
+cp /etc/nginx/nginx.conf /etc/nginx/extra.d/_custom/nginx.conf
+nginx -t
+service nginx restart
