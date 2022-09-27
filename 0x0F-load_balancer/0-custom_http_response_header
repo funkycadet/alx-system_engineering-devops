@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 # Script to add custom headers to Nginx
 apt update
+apt -y install nginx
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+sed -i "25i\		error_page 404 /custom_404.html;" /etc/nginx/sites-available/default
 sed -i "11i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
 service nginx restart
