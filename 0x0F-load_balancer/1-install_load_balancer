@@ -38,13 +38,15 @@ defaults
   timeout connect 10s
   timeout server 15s
   timeout http-request 10s
-frontend th3gr00t-tech-frontend
+
+frontend web-server
     bind *:80
-    default_backend th3gr00t-tech-backend
-backend th3gr00t-tech-backend
+    default_backend web-server
+
+backend web-server
     balance roundrobin
-    server 453-web-01 35.243.128.200:80 check
-    server 453-web-02 3.239.120.96:80 check
+    server 11359-web-01 3.236.55.133:80 check
+    server 11359-web-02 44.200.186.95:80 check
 "
 
 # shellcheck disable=SC2154
