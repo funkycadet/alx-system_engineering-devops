@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+DBNAME=tyrell_corp
+DATE=`date +%d-%m-%Y`
+SQLFILE=backup.sql
+mysqldump -uroot -p $2 $DBNAME > $SQLFILE
+tar -czf $DATE.tar.gz $SQLFILE
