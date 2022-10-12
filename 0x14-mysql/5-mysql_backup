@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Script to create a MySQL backup and compress to tar.gz
 DBNAME=tyrell_corp
 DATE=`date +%d-%m-%Y`
 SQLFILE=backup.sql
