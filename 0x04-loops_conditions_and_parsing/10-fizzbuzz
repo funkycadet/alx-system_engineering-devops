@@ -5,18 +5,20 @@
 # - displays Buzz when the number is a multiple of 5
 # - otherwise displays the number
 # - in a list format
-for i in {1..100}
-do
-    if [ $((i % 5)) -eq 0 -a $((i % 3)) -eq 0 ]
-    then
-        echo "FizzBuzz"
-    elif [ $((i % 5)) -eq 0 ]
-    then
-        echo "Buzz"
-    elif [ $((i % 3)) -eq 0 ]
-    then
-        echo "Fizz"
-    else
-        echo "$i"
-    fi
+n=1
+
+while [ "$n" -le 100 ]; do
+
+
+  if ! (( n % 3 )) && ! (( n % 5 )); then
+    echo "FizzBuzz"
+  elif ! (( n % 3 )); then
+    echo "Fizz"
+  elif ! (( n % 5 )); then
+    echo "Buzz"
+  else
+    echo "$n"
+  fi
+  
+  ((n++))
 done
